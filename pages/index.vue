@@ -66,7 +66,7 @@ const isShowLoading = computed(() => isLoading.value || bookLoading.value)
         <UButton icon="i-heroicons-shopping-cart" color="gray" @click="isShowCart = !isShowCart"/>
       </UChip>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-5" v-if="books">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-5" v-if="books">
       <Card
           v-for="book in books" :key="book.id"
           :book="book"
