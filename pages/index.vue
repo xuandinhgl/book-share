@@ -55,6 +55,7 @@ const onRemoveItem = (Rid: string) => {
 }
 
 const {data: books, pending: bookLoading} = await useFetch<Book[]>('/api/book')
+const isShowLoading = computed(() => isLoading.value || bookLoading.value)
 </script>
 
 <template>
@@ -76,5 +77,5 @@ const {data: books, pending: bookLoading} = await useFetch<Book[]>('/api/book')
     <UserForm v-model="isShowForm" @submit="onSubmitForm" />
   </UContainer>
   <UNotifications class="bottom-auto top-0"/>
-  <Loading v-model="isLoading || bookLoading" />
+  <Loading v-model="isShowLoading" />
 </template>
